@@ -1,5 +1,7 @@
 {
   "name": "sms-plugin-test",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
