@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
+import { SmsRetriever } from '@awesome-cordova-plugins/sms-retriever/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -9,7 +10,10 @@ import { SmsRetriever } from '@ionic-native/sms-retriever/ngx';
 export class Tab1Page {
   public smsTextmessage: string = '';
   public appHashString: string = '';
-  constructor(private smsRetriever: SmsRetriever) { }
+  public readonly isAndroid: boolean = false;
+  constructor(private smsRetriever: SmsRetriever, private platform: Platform) {
+      this.isAndroid = platform.is('android');
+  }
   getHashCode() {
     this.smsRetriever.getAppHash()
       .then((res: any) => {

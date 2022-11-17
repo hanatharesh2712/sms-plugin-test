@@ -23,8 +23,8 @@
         </code>
     </ion-card-content>
   </ion-card>
-  <ion-button color="primary" (click)="getHashCode()" size="small">Get App Hash</ion-button>
-  <ion-button color="secondary" (click)="getSMS()" size="small">Start Watching SMS</ion-button>
+  <ion-button *ngIf="isAndroid" color="primary" (click)="getHashCode()" size="small">Get App Hash</ion-button>
+  <ion-button *ngIf="isAndroid" color="secondary" (click)="getSMS()" size="small">Start Watching SMS</ion-button>
   <ion-note color="primary">{{appHashString}}</ion-note>
   <br>
   <ion-note>{{smsTextmessage}}</ion-note>
